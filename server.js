@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 // cors middleware
 app.use(
   cors({
-    origin: ['http://localhost:5502', 'https://servertmbc-310782056bbb.herokuapp.com/'],
+    origin: ['https://tmbc-ng.com/', 'https://servertmbc-310782056bbb.herokuapp.com/'],
     credentials: true,
   })
 );
