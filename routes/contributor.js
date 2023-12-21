@@ -2,17 +2,19 @@ const express = require('express');
 const contributorRouter = express.Router();
 const Contributor = require('../model/Contributor');
 
+
+
 // Get all Contributors
 contributorRouter.get('/', async (req, res) => {
 
-   try {
+  try {
     const contributor =  await Contributor.find().sort({ preference: 'asc' })
     res.json({ success: true, data: contributor });
   } catch (error) {
     console.log(error);
     res.status(500).json({ success: false, error: 'Something went wrong' });
   } 
-
+ 
 });
 
 // Get single Conributor
@@ -45,7 +47,7 @@ console.log(contributor)
           .catch((err) => {
              console.log(err)
           })
-   console.log(result)
+  // console.log(result)
 }));
 
 // Update Contributor
@@ -84,4 +86,9 @@ contributorRouter.get('/api/contributor', async (res,req) => {
   res.sendFile('index.html')
 })
 
+//404 PAGE
+/* router.get('/',(req, res) => {
+  res.status(404).sendFile(__dirname + '/404.html')
+})
+ */
 module.exports = contributorRouter;

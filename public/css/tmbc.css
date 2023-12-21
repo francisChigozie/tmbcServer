@@ -1,0 +1,545 @@
+:root {
+    --primary-color: #c72727;
+    --secondary-color: #f99500;
+    --light-color: #f3f3f3;
+    --dark-color: #333;
+    --max-width: 1100px;
+    --animate-speed: 2s;
+  }
+  
+  
+  /* Page Colors */
+  #page-1 { background: var(--page-1-color) }
+  #page-2 { background: var(--page-2-color) }
+  #page-3 { background: var(--page-3-color) }
+  #page-4 { background: var(--page-4-color) }
+  
+  .page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 4rem;
+  }
+  
+  
+  /* Page Animation */
+  .page-1 h1 {
+    transform: translateY(-1200px);
+    animation: heading var(--animate-speed) forwards ease-in;
+  }
+  
+  #page-1 p {
+    transform: translateX(-1800px);
+    animation: text var(--animate-speed) forwards ease-in 1s;
+  }
+  
+  /* Keyframes */
+  @keyframes heading {
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes text {
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* Another CSS */
+  body {
+    font-family: 'Roboto Serif', serif;
+    line-height: 1.5;
+    background: var(--light-color);
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  p {
+    margin: .5rem 0;
+  }
+  
+  /* Utility */
+  .container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 2rem;
+    overflow: hidden;
+  }
+  
+  .category {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    padding: 0.4rem 0.6rem;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .category-sports { background: var(--sports-color) }
+  .category-ent { background: var(--ent-color) }
+  .category-tech { background: var(--tech-color) }
+  
+  .btn {
+    display: inline-block;
+    border: none;
+    background: var(--primary-color);
+    color: whitesmoke;
+    padding: 0.5rem 1.5rem;
+    
+  }
+  
+  .btn-light { background: var(--light-color) }
+  .btn-primary { background: var(--primary-color) }
+  .btn-secondary { background: var(--secondary-color) }
+  
+  .btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    
+  }
+  
+  .btn:hover {
+    opacity: 0.9; 
+  }
+  
+  .card {
+    background: #fff;
+    padding: 1rem;
+  }
+  
+  .bg-dark {
+    background: var(--dark-color);
+    color: #fff;
+  }
+  
+  .bg-primary {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  
+  .bg-secondary {
+    background: var(--secondary-color);
+    color: #fff;
+  }
+  
+  .bg-dark h1,
+  .bg-dark h2,
+  .bg-dark h3,
+  .bg-dark a,
+  .bg-primary h1,
+  .bg-primary h2,
+  .bg-primary h3,
+  .bg-primary a,
+  .bg-secondary h1,
+  .bg-secondary h2,
+  .bg-secondary h3,
+  .bg-secondary a {
+    color: #fff;
+  }
+  
+  .py-1 { padding: 1.5rem 0 }
+  .py-2 { padding: 2rem 0 }
+  .py-3 { padding: 3rem 0 }
+  .p-1 { padding: 1.5rem }
+  .p-2 { padding: 2rem }
+  .p-3 { padding: 3rem }
+  
+  .l-heading {
+    font-size: 3rem;
+  }
+  
+  .list li {
+    padding: .5rem 0;
+    border-bottom: #555 dotted 1px;
+    width: 90%;
+  }
+  
+  .list li a:hover {
+    color: var(--primary-color) !important;
+  }
+  
+  /* Inner page grid container */
+  .page-container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    margin: 2rem 0;
+    grid-gap: 1.5rem;
+  }
+  
+  .page-container > *:first-child {
+    grid-row: 1 / span 3;
+  }
+  
+  /* Navigation */
+  #main-nav {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  
+  #main-nav .container {
+    display: grid;
+    grid-template-columns: 6fr 3fr 2fr;
+    padding: 1rem;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 80px;
+  }
+  
+  #main-nav ul {
+    justify-self: end;
+    display: flex;
+  }
+  
+  #main-nav ul li a {
+    padding: 0.75rem;
+    font-weight: bold;
+  }
+  
+  #main-nav ul li a.current {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  
+  #main-nav ul li a:hover {
+    background: var(--light-color);
+    color: var(--dark-color);
+  }
+  
+  #main-nav .social {
+    justify-self: center;
+  }
+  
+  #main-nav .social i {
+    color: #777;
+    margin-right: .5rem;
+  }
+  
+  /* Showcase */
+  #showcase {
+    color: #fff;
+    background: #333;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  #showcase:before {
+    content: '';
+    background: url('../img/showcase.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  
+  #showcase .showcase-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+  #showcase .showcase-content {
+    z-index: 1;
+  }
+  
+  #showcase .showcase-content p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Home Articles */
+  #home-articles .articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+  
+  #home-articles .articles-container > *:first-child,
+  #home-articles .articles-container > *:last-child {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    grid-column: 1 / span 2;
+  }
+  
+  #home-articles .articles-container > *:last-child {
+    grid-column: 2 / span 2;
+  }
+  
+  #article .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eee;
+    padding: 0.5rem;
+  }
+  
+  #article .meta .category {
+    margin-top: 0.4rem;
+  }
+  
+  /* Footer */
+#main-footer {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+#main-footer img {
+  width: 150px;
+}
+
+#main-footer a {
+  color: #fff;
+}
+
+#main-footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+}
+
+#main-footer .footer-container > *:last-child {
+  background: #444;
+  grid-column: 1 / span 4;
+  padding: .5rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+#main-footer .footer-container input[type='email'] {
+  width: 90%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#main-footer .footer-container input[type='submit'] {
+  width: 90%;
+}
+
+  /* Developer CSS */
+
+  .parent {
+    display: flex;
+  justify-content: space-around;
+  width: 45%;
+  color: #000;
+  padding-left: 60px ;
+  margin: 0 5px 20px;
+  font-weight: 900;
+  font-size: large;
+  }
+
+  .parent .child{
+    margin-left: 10px;
+  }
+
+  .conference{
+    padding-left: 100px;
+  }
+
+  .monthly{
+    padding-left: 700px;
+  }
+
+  .child{
+    padding: 15px ;
+    background-color:black ;
+    color: #f4f4f4;
+    
+  }
+
+  .menu{
+    background: #c72727;
+    padding: 1px ;
+  }
+
+  /* Contact Form Area */
+
+  .container {
+    max-width: 1280px;
+    padding: 0 1.5rem;
+    margin: auto;
+    overflow: hidden;
+   }
+
+  #contact-a .text-fields {
+    display: grid;
+    grid-template-areas: 'name email' 'subject phone' 'message message';
+    grid-gap: 1.2rem;
+    margin-bottom: 1.2rem; }
+
+    #contact-a .text-fields .name-input {
+      grid-area: name; }
+
+    #contact-a .text-fields .subject-input {
+      grid-area: subject; }
+
+    #contact-a .text-fields .email-input {
+      grid-area: email; }
+
+    #contact-a .text-fields .phone-input {
+      grid-area: phone; }
+
+    #contact-a .text-fields .message-input {
+      grid-area: message;
+      height: 100px; }
+
+    #contact-a .text-fields .text-input {
+      padding: 0.5rem 1rem; }
+  
+  #contact-a button[type='submit'] {
+    width: 50%; }
+  
+  #contact-b .contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center; }
+  
+  #contact-c h1 {
+    text-align: center;
+    font-size: 4rem; }
+
+    .brand-enhancement {
+      padding: 50px 50px;
+      border: 1px solid rgb(171, 171, 220);
+      color: #000;
+      width: 80%;
+      margin-left: 50px;
+      display: inline-block;
+      justify-items: auto;
+      line-height: 1rem;
+      margin-top: -6rem;
+      z-index: 1;
+      /* background: url('../img/showcase.jpg') no-repeat center center/cover; */
+    }
+
+    .newBrand-enhancement{
+      padding: 50px 50px;
+      color: #000;
+      width: 80%;
+      margin-left: 50px;
+      display: inline-block;
+      justify-items: auto;
+      line-height: 1rem;
+      margin-top: -3rem;
+      z-index: 1;
+    }
+
+    /* more of contact form*/
+    .form-control {
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+      position: relative;
+  }
+  
+  .form-control label {
+      display: inline-block;
+      margin-bottom: 5px;
+  }
+  
+  .form-control input {
+      border: 2px solid #f0f0f0;
+      border-radius: 4px;
+      display: block;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 10px;
+      width: 100%;
+  }
+  
+  .form-control.success input {
+      border-color: #2ecc71;
+  }
+  
+  .form-control.error input {
+      border-color: #e74c3c;
+  }
+  
+  .form-control.success i.fa-check-circle {
+      visibility: visible;
+      color: #2ecc71;
+  }
+  
+  .form-control.error i.fa-exclamation-circle {
+      visibility: visible;
+      color: #e74c3c;
+  }
+  
+  .form-control i {
+      position: absolute;
+      top: 40px;
+      right: 10px;
+      visibility: hidden;
+  }
+  
+  .form-control small {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      visibility: hidden;
+  }
+  
+  .form-control.error small {
+      visibility: visible;
+      color: #e74c3c;
+  }
+  
+/* Modal design */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-box {
+  margin: 10% auto;
+  width: 600px;
+
+  background-color: rgb(6, 118, 210);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Asides */
+
+
+  

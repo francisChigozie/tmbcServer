@@ -1,0 +1,85 @@
+const form = document.getElementById('form');
+const firstName = document.getElementById('first-name');
+const lastName = document.getElementById('last-name');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+
+form.addEventListener('submit',(e) => {
+    e.preventDefault();
+
+    checkInputs();
+});
+
+function checkInputs() {
+    // get the values from the inputs
+    const firstNameValue = firstName.value.trim();
+    const lastNameValue = lastName.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const password2Value = password2.value.trim();
+
+    if(firstNameValue === '') {
+        // show error
+        // add error class
+        setErrorFor(firstName, 'Please enter your first name');
+    }else{
+        // add success class
+        setSuccessFor(firstName)
+    }
+
+    if(lastNameValue === '') {
+        // show error
+        // add error class
+        setErrorFor(lastName, 'Please enter your last name');
+    }else{
+        // add success class
+        setSuccessFor(lastName)
+    }
+
+    if(emailValue === '') {
+        setErrorFor(email, 'Please enter your email')
+    }else if(!isEmail(emailValue)) {
+        setErrorFor(email, 'Enter a valid email')
+    }else{
+        setSuccessFor(email);
+    }
+
+    if(passwordValue === '') {
+        setErrorFor(password, 'Please enter your password');
+    }else{
+        // add success class
+        setSuccessFor(password)
+    }
+
+    if(password2Value === '') {
+        setErrorFor(password2, 'Confirm your password');
+    }else if(passwordValue !== password2Value) {
+        setErrorFor(password2, 'Password does not match');
+    }else{
+        // add success class
+        setSuccessFor(password2)
+    }
+
+    // show suceess message
+}
+
+function setErrorFor(input, message) {
+    const formControl = input.parentElement; //form-control
+    const small = formControl.querySelector('small');
+
+    // add error message inside small
+    small.innerText = message;
+
+    // add error class
+    formControl.className = 'form-control error';
+}
+
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success'
+}
+
+function isEmail(email){
+    return (regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")
+}
