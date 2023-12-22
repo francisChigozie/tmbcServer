@@ -73,7 +73,7 @@ body {
   opacity: 0.7;
 }
 
-.contributor-profile {
+.contributor-profile, .editor-profile {
   background-color: white !important;
  
   font-family: Arial, Helvetica, sans-serif;
@@ -91,7 +91,7 @@ body {
  
 }
 
-.new-enhancement {
+.new-enhancement, .new-editorial{
     background-color: white !important;
     /* border: 1px solid rgb(171, 171, 220); */
     font-family: Arial, Helvetica, sans-serif;
@@ -107,11 +107,11 @@ body {
       
   }
   
-.contributor-profile {
+.contributor-profile, .editor-profile {
   text-align: center;
 }
 
-.new-enhancement {
+.new-enhancement, .new-editorial {
   text-align: center;
   
 }

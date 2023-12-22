@@ -1,6 +1,6 @@
 const express = require('express');
 const editorRouter = express.Router();
-const Editor = require('../model/Editior');
+const Editor = require('../model/Editor');
 
 
 
@@ -41,7 +41,7 @@ console.log(editor)
 
    const result = await newEditor.save()// Make sure to wrap this code in an async function
           .then((result) => {
-             res.render('chiefeditor', {contributor: result});
+             res.render('chiefeditor', {editor: result});
           })
           .catch((err) => {
              console.log(err)
