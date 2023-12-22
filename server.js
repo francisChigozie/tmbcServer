@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 // cors middleware
 app.use(
   cors({
-    origin: ['http://localhost:5000'],
+    origin: ['https://www.tmbc-ng.com/'],
     credentials: true,
   })
 );
@@ -41,5 +41,8 @@ app.use('/api/contact', contactRouter);
 
 const contributorRouter = require('./routes/contributor');
 app.use('/api/contributor', contributorRouter);
+
+const editorRouter = require('./routes/editor');
+app.use('/api/editor', editorRouter);
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));

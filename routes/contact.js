@@ -83,9 +83,6 @@ router.get('/api/contact', async (res,req) => {
   res.sendFile('index.html')
 })
 
-//404 PAGE
-/* router.get('/',(req, res) => {
-  res.status(404).sendFile(__dirname + '/404.html')
-}) */
+
 
 module.exports = router;
