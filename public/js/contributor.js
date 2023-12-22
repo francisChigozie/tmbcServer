@@ -61,7 +61,7 @@ let output;
 
               newEnhanedBrand.innerHTML =output;
 
-            },6000)
+            },5000)
              
           }
            else{

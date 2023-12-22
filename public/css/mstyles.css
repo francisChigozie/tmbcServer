@@ -105,11 +105,9 @@ body {
     /* Margin shorthand = top, right, bottom, left */
     margin: 10px 10px 10px 10px ;
       
-    
-   
   }
   
-.contributor-profile li{
+.contributor-profile {
   text-align: center;
 }
 
