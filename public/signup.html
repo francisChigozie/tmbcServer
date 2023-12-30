@@ -21,11 +21,11 @@
     <div class="form-wrap">
       <h1>Sign Up</h1>
       <p class="error-response">It's free and only takes a minute</p>
-      <form class="form" id="form" action="" method="post">  
+      <form class="form" id="form" action="/api/auth/register" method="post">  
         <div class="form-group form-control">
           <label for="first-name">First Name</label>
           <input type="text" name="firstName" 
-          id="first-name" >
+          id="first-name" required>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -33,7 +33,7 @@
         <div class="form-group form-control">
           <label for="last-name">Last Name</label>
           <input type="text" name="lastName" 
-          id="last-name" />
+          id="last-name" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -41,7 +41,7 @@
         <div class="form-group form-control">
           <label for="email">Email</label>
           <input type="email" name="email" 
-          id="email" />
+          id="email" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -49,7 +49,7 @@
         <div class="form-group form-control">
           <label for="password">Password</label>
           <input type="password" name="password" 
-          id="password"/>
+          id="password" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -57,7 +57,7 @@
         <div class="form-group form-control">
           <label for="password2">Confirm Password</label>
           <input type="password" name="pasword2" 
-          id="password2" />
+          id="password2" required/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
@@ -76,7 +76,7 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.3/axios.min.js"></script>
-  <script src="/js/signup.js"></script>
+  <!-- <script src="/js/signup.js"></script> -->
 
 </body>
 </html>

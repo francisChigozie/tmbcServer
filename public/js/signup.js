@@ -1,15 +1,8 @@
-const form = document.getElementById('form');
+
 const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
-
-form.addEventListener('submit',(e) => {
-    e.preventDefault();
-
-    checkInputs();
-});
 
 function checkInputs() {
     // get the values from the inputs
@@ -39,8 +32,7 @@ function checkInputs() {
 
     if(emailValue === '') {
         setErrorFor(email, 'Please enter your email')
-    }else if(!isEmail(emailValue)) {
-        setErrorFor(email, 'Enter a valid email')
+   
     }else{
         setSuccessFor(email);
     }
@@ -80,6 +72,44 @@ function setSuccessFor(input) {
     formControl.className = 'form-control success'
 }
 
-function isEmail(email){
-    return (regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")
+ //Make HTTP POST request
+ const adminContributor = async ( 
+    firstNameValue,lastNameValue,emailValue,passwordValue,password2Value
+ ) => {
+ try {
+   const response = await axios({
+     method: 'POST',
+     url: '/api/auth/register',
+     data: {
+        firstNameValue,lastNameValue,emailValue,passwordValue,password2Value
+     }
+   })
+   console.log(response)
+   
+ } catch (error) {
+   console.log(error)
+ }
+
 }
+
+ document.getElementById('form').addEventListener('submit', e => {
+ e.preventDefault();
+
+     const firstNameValue = firstName.value.trim();
+     const lastNameValue = lastName.value.trim();
+     const emailValue = email.value.trim();
+     const passwordValue = password.value.trim();
+     const password2Value = password2.value.trim();
+
+     /* const data = {
+        firstNameValue,lastNameValue,emailValue,passwordValue,password2Value
+     }
+ */
+     //console.log(data)
+
+     checkInputs();
+    adminContributor(
+        firstNameValue,lastNameValue,emailValue,passwordValue,password2Value
+    );
+
+})
