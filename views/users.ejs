@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300&display=swap" rel="stylesheet">
 <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet"> 
-<title>Logged-In</title>
+<title>Signed-Up</title>
     
 </head>
 <body>
@@ -33,7 +33,7 @@
               </div>
               <ul>
                 <li><a href="/index.html" id="home">Home</a></li>
-                <li><a class="current" href="/login.html" id="contact">LogOut</a></li>
+                <li><a class="current" href="/login.html" id="contact">LogIn</a></li>
               </ul>
             </div>
           </nav>
@@ -55,13 +55,19 @@
         <div id="feedback-form">
           <div class="feedback-image"  ></div>
 
-            <h3 style="text-align: center;"><span class="text-primary"> Logged in
-                </span>as:  <%= user.role %> </h3><br>
-            
+            <h1 style="text-align: center;"><span class="text-primary">Signed
+                </span>Up</h1><br>
+            <h3>Successfully completed your registration.</h3><br>
             <p class="feedback-form">
-                <b>Welcome back  </b>
+                <b>Welcome </b>
 
                     <%= user.firstName %> !
+
+                    <br>
+                    <p>Your are registerd as: </p>
+
+                    <%= user.role %>
+
                         <br>
                         <p>TMBC Management</p>
         </div><br><br>
