@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const cookieParser = require('cookie-parser')
 //require('dotenv').config();
 const dotenv = require('dotenv')
 // Load env vars
@@ -15,10 +16,20 @@ connectDB();
 
 const app = express();
 
+// Body parser
+app.use(express.json());
+
+// Cookie parser
+app.use(cookieParser());
+
 //Static Folder
 app.use(express.static(path.join(__dirname,'public')))
-app.set('view engine', 'ejs');
+app.set('view engine','ejs');
 app.use( express.static( 'views' ) );
+
+
+//app.set('views'(path.join(__dirname,'views')))
+
 
 // Body parser middleware
 app.use(express.json());
@@ -44,5 +55,10 @@ app.use('/api/contributor', contributorRouter);
 
 const editorRouter = require('./routes/editor');
 app.use('/api/editor', editorRouter);
+
+const authRouter = require('./routes/auth');
+app.use('/api/auth', authRouter);
+
+
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
