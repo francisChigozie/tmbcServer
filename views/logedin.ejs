@@ -7,9 +7,9 @@
     <meta name="description" content="welcome to business magazine in africa">
     <meta name="keywordy" content="business magazine,africa,nigeria,lagos,abuja">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/tmbc.css">
+    <link rel="stylesheet" href="/css/tmbc.css">
     
-    <link rel="stylesheet" media="screen and (max-width: 768px)" href="../css/mobile.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="/css/mobile.css">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
      
         <nav id="main-nav">
             <div class="container">
-              <a href="login.html" id="contact-logo"></a>
+              <a href="/login.html" id="loggedIn-logo"></a>
               
               <div class="social">
           
@@ -32,8 +32,8 @@
                 <a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
               </div>
               <ul>
-                <li><a href="index.html" id="home">Home</a></li>
-                <li><a class="current" href="/contact.html" id="contact">Feedback</a></li>
+                <li><a href="/index.html" id="home">Home</a></li>
+                <li><a class="current" href="/login.html" id="contact">LogOut</a></li>
               </ul>
             </div>
           </nav>
@@ -41,21 +41,28 @@
         
 </head>
 <body>
+  <div id="modal" class="modal">
+    <div id="form-modal" class="modal-box">
+      <ul>
+        <li><a href="/about.html " id="#"  style="color: whitesmoke">About Us</a></li>
+          <li><a href="/public/edit.html" id="#"  style="color: whitesmoke">Publisher / Editor-in-Chief</a></li>
+          <li><a href="/public/contributor.html" id="#"  style="color: whitesmoke">Contributors Profiles</a></li>
+      </ul>
+    </div>
+ </div>
   
     <section>
         <div id="feedback-form">
           <div class="feedback-image"  ></div>
 
-            <h1 style="text-align: center;"><span class="text-primary">Editor Personels
-                </span>Feedback</h1><br>
-            <h3>Successfully added a new Editor-in-Chief:</h3><br>
+            <h3 style="text-align: center;"><span class="text-primary"> Logged in
+                </span>as:  <%= user.role %> </h3><br>
+            
             <p class="feedback-form">
-                <b>H! </b>
+                <b>Welcome back  </b>
 
-                <%= editor.name %>,
-
+                    <%= user.firstName %> !
                         <br>
-                        <p>The entire Management welcome the new devlopment.</p>
                         <p>TMBC Management</p>
         </div><br><br>
 
@@ -66,7 +73,7 @@
   <footer id="main-footer" class="py-2">
     <div class="container footer-container">
       <div>
-        <a href="/" id="contact-foot"></a>
+        <a href="/" id="loggedIn-foot"></a>
         <p>Business magazine on soft drives</p>
         <h6>Email: info@tmbc-ng.com</h6>
         <p>For Branding, Marketing, Events and other inquires:</p>
@@ -110,6 +117,6 @@
       </div>
     </div>
   </footer>
-  <script src="../js/contact.js"></script>
+  <script src="/js/auth.js"></script>
 </body>
 </html>
